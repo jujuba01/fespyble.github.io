@@ -1,0 +1,111 @@
+<!Doctype html> 
+<html lang="pt-br">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title> Fespy</title>
+		<meta charset="UTF-8"> 
+		<link rel="stylesheet" type="text/css" href="_css/css1.css">
+		
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web:300" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="_css/slidejava.css"/> 
+	</head>
+	<body>	
+				<!-- Slider -->
+				<div id="container">
+					<a href="#"><img class="slides" src="_img/Bannersite717x460-01.jpg"></a>
+					<a href="#"><img class="slides" src="_img/Bannersite717x460-01.jpg"></a>
+					<a href="#"><img class="slides" src="_img/Bannersite717x460-01.jpg"></a>
+					<a href="#"><img class="slides" src="_img/Bannersite717x460-01.jpg"></a>
+					<a href="#"><img class="slides" src="_img/3.jpg"></a>
+					<button class="btn" onclick="plusIndex(-1)" id="btn1">&#10094;</button>
+					<button class="btn" onclick="plusIndex(1)"id="btn2">&#10095;</button>
+				</div>
+			<div id="noticias1">
+				<a href="#"><h2>Blog</h2></a>
+				<div class="noticia1">
+				<a href="#"><h3> Fespy em Controle!</h3>
+				<p> Seja bem-vindo ao Projeto Paralelo da Fespy para o ano de 2017, onde contará com várias novidades... </p></a>
+			</div>
+			<div class="noticia2">
+				<a href="#"><h3> Como ajudar a Fespy?</h3>
+				<p> Saiba como ajudar a fespy, até mesmo através de feedbacks, doações, etc, link para doação... </p></a>
+			</div>
+			<div class="noticia3">
+				<a href="#"><h3> Aprenda com a Fespy</h3>
+				<p> Seja bem-vindo ao Projeto Paralelo da Fespy para o ano de 2017, onde contará com várias novidades... </p></a>
+			</div>
+		</div>
+				<!-- /Slider -->
+		<header class="cabecalho">
+				<!-- .logo -->
+				<a href="index.html">
+					<h1 class="logo"> fespy </h1>
+				</a>
+				<!-- /.logo -->
+						<!-- #menu -->
+			
+			<input type="checkbox" id="bt_menu">
+			<label for="bt_menu">&#9776;</label>
+			<nav class="menu">
+					<ul>
+						<li><a class="home" href="#">Início</a></li>
+						<li><a  href="#">Online</a></li>
+						<li><a href="#">Comércio</a></li>
+						<li><a  href="#">Contato</a></li>	
+					</ul>
+			</nav>
+			<!-- /#menu -->
+			</header>
+			<div id="feedback">
+			<a href="#"><img src="_img/Bannerslider3-01.jpg"></a>
+		</div>
+		<footer id="rodape">
+			<p class="copyright">
+				Copyright © Fespy 2017. Todos os direitos reservados.
+			</p>
+			<div class="social-icons">
+				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-instagram"></i></a>
+				<a href="#"><i class="fa fa-google"></i></a>
+				<a href="#"><i class="fa fa-envelope"></i></a>
+			</div>
+			
+		</footer>
+	</body>
+	<script>
+var index = 1;
+
+function plusIndex(n){
+index = index + 1;
+showImage(index);
+}
+
+showImage(1);
+
+function showImage(n){
+var i;
+var x = document.getElementsByClassName("slides");
+if(n > x.length){ index = 1};
+if(n < 1){ index = x.length};
+for(i=0;i<x.length;i++)
+{
+x[i].style.display = "none";
+}
+x[index-1].style.display = "block";
+}
+autoSlide();
+function autoSlide(){
+var i;
+var x = document.getElementsByClassName("slides");
+for(i=0;i<x.length;i++){
+x[i].style.display = "none";
+}
+index++;
+if(index > x.length){index = 1}
+x[index-1].style.display = "block";
+setTimeout(autoSlide,8000);
+
+}
+</script>
+</html>
